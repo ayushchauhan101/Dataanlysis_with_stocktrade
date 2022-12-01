@@ -1,0 +1,14 @@
+filter by time
+==============
+import pandas as pd
+# pip install and import pandas and openpyxl to both read xlsx file and use pandas on it
+
+# assign a variable to the parsed spreadsheet
+data = pd.read_excel('data.xlsx')
+# convert into a dataframe
+df = pd.DataFrame(data)
+
+# select the column and enter the exact value to be found
+filter_by_time = (df['Time'] == '0 days 10:00:59')
+
+print(df.loc[filter_by_time, 'Time'])
